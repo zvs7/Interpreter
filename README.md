@@ -1,63 +1,63 @@
 # Interpreter
 The following defines a simple language, in which a program consists of assignments and each variable is assumed to be of the integer type. For the sake of simplicity, only operators that give integer values are included. Write an interpreter for the language in a language of your choice. Your interpreter should be able to do the following for a given program: (1) detect syntax errors; (2) report uninitialized variables; and (3) perform the assignments if there is no error and print out the values of all the variables after all the assignments are done.
 
-Program:
+## Program:
 	Assignment*
 
-Assignment:
+### Assignment:
 	Identifier = Exp;
 
-Exp: 
+### Exp: 
 	Exp + Term | Exp - Term | Term
 
-Term:
+### Term:
 	Term * Fact  | Fact
 
-Fact:
+### Fact:
 	( Exp ) | - Fact | + Fact | Literal | Identifier
 
-Identifier:
+### Identifier:
      	Letter [Letter | Digit]*
 
-Letter:
+### Letter:
 	a|...|z|A|...|Z|_
 
-Literal:
+### Literal:
 	0 | NonZeroDigit Digit*
 		
-NonZeroDigit:
+### NonZeroDigit:
 	1|...|9
 
-Digit:
+### Digit:
 	0|1|...|9
 
-Sample inputs and outputs
-Input 1
+#### Sample inputs and outputs
+- Input 1 <br /> 
 x = 001;
 
-Output 1
+- Output 1 <br /> 
 error
 
-Input 2
+- Input 2 <br /> 
 x_2 = 0;
 
-Output 2
+- Output 2 <br /> 
 x_2 = 0
 
-Input 3
-x = 0
-y = x;
+- Input 3 <br /> 
+x = 0 <br /> 
+y = x; <br /> 
 z = ---(x+y);
 
-Output 3
+- Output 3 <br /> 
 error
 
-Input 4
-x = 1;
-y = 2;
+- Input 4 <br /> 
+x = 1; <br /> 
+y = 2; <br /> 
 z = ---(x+y)*(x+-y);
 
-Output 4
-x = 1
-y = 2
+- Output 4 <br /> 
+x = 1 <br /> 
+y = 2 <br /> 
 z = 3
